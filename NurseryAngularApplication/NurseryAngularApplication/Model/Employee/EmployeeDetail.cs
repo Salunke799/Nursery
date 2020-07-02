@@ -11,7 +11,7 @@ namespace NurseryAngularApplication.Model.Employee
     public class EmployeeDetail : CommonDataModel
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
         public int? NurseryId { get; set; }
         public Nursery Nursery { get; set; }
