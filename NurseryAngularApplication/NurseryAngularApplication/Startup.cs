@@ -10,6 +10,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using NurseryAngularApplication.Model;
 using NurseryAngularApplication.Model.AppService;
+using NurseryAngularApplication.Model.AppService.Employees;
+using NurseryAngularApplication.Model.AppService.Farmers;
+using NurseryAngularApplication.Model.AppService.Nurserys;
+using NurseryAngularApplication.Model.AppService.Sales;
+using NurseryAngularApplication.Model.Employee.Dto;
+using NurseryAngularApplication.Model.Farmers.Dto;
+using NurseryAngularApplication.Model.Nurserys.Dto;
+using NurseryAngularApplication.Model.Sales.Dto;
 using NurseryAngularApplication.Model.States.Dto;
 
 namespace NurseryAngularApplication
@@ -30,9 +38,10 @@ namespace NurseryAngularApplication
             services.AddDbContext<NursaryContext>(item => item.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddMemoryCache();
             services.AddScoped<IStateRepository, StateRepository>();
-            //services.AddScoped<INurseryRepository, NurseryRepository>();
-            //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            //services.AddScoped<IFarmerRepository, FarmerRepository>();
+            services.AddScoped<INurseryRepository, NurseryRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IFarmerRepository, FarmerRepository>();
+            services.AddScoped<ISalesRepository, SalesRepository>();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
