@@ -1,0 +1,49 @@
+<div class="kt-portlet kt-portlet--mobile">
+  <div class="kt-portlet__head">
+    <div class="kt-portlet__head-label">
+      <h4 class="kt-portlet__head-title">
+        Nursery
+      </h4>
+    </div>
+    <div class="kt-portlet__head-toolbar">
+      <button type="submit" class="btn btn-sm btn-skype" (click)="popupModalNursery.showModalDialog()">Add Narsary</button>
+    </div>
+  </div>
+  <!--<load-bar [visible]="loading"></load-bar>-->
+  <div class="kt-portlet__body kt-paddinf-t-10" style="min-height:500px !important;" *ngIf="nursery">
+    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+      <thead>
+        <tr>
+          <th>Name Narsary</th>
+          <th>Address</th>
+          <th>Contact No</th>
+          <th>Start Date</th>
+          <th>Owner Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of nursery;">
+          <td>{{item.nurseryName}}</td>
+          <td>
+            <span class="kt-font-bolder">&nbsp; A/P</span>: {{item.vilageName}},
+            <span class="kt-font-bolder">&nbsp; Tel</span>: {{item.tehsilName}},
+            <span class="kt-font-bolder">&nbsp; Dist</span>: {{item.districtName}},
+            <span class="kt-font-bolder">&nbsp; State</span>: {{item.stateName}}
+          </td>
+          <td>{{item.contactNumber}}</td>
+          <td>{{item.startDate | date }}</td>
+          <td>
+            {{item.firstName}}  {{item.lastName}}            
+          </td>
+          <td>
+            <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-info mouse-hover"
+                    (click)="popupModalNursery.showModalDialog(item.id)">Edit</button>
+            <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-danger kt-padding-l-10 mouse-hover" (click)="deleteNursery(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<add-edit-nursery #popupModalNursery></add-edit-nursery>-->

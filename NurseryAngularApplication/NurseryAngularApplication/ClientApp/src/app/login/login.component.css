@@ -1,0 +1,6 @@
+button {
+  margin: 0 2px;
+}
+.ui-dialog-content .ui-widget-content{
+    border-radius:10px !important;
+}

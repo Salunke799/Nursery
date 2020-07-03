@@ -1,0 +1,45 @@
+<div class="kt-portlet kt-portlet--mobile">
+  <div class="kt-portlet__head">
+    <div class="kt-portlet__head-label">
+      <h4 class="kt-portlet__head-title">
+        Attendance
+      </h4>
+    </div>
+    <div class="kt-portlet__head-toolbar">
+
+    </div>
+  </div>
+  <div class="kt-portlet__body kt-paddinf-t-10">
+    <div class="kt-portlet__body kt-paddinf-t-10" style="min-height:500px !important;">
+      <table datatable [dtOptions]="dtOptions" class="row-border hover">
+        <thead>
+          <tr>
+            <th>Emp Name</th>
+            <th>Contact No</th>
+            <th>Gender</th>
+            <th>Total Working Day</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="empData">
+          <tr *ngFor="let item of empData;">
+            <td>{{item.name}}</td>
+            <td>{{item.mobileNo}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.empEdu}}</td>
+            <th>
+              <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-info mouse-hover" (click)="attendance.showModalDialog()">
+                Change Attendance
+              </button>
+              <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-skype kt-padding-l-10 mouse-hover"
+                      (click)="attendance.showModalDialog()">
+                Add Attendance
+              </button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<add-attendance #attendance></add-attendance>

@@ -9,7 +9,7 @@ import { UserDirective } from './directives/user.directive';
 import { AuthService } from './services/auth.service';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { SalesComponent } from './sales/sales.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { PurchaseComponent } from './purchase/purchase.component';
@@ -29,19 +29,18 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent,  
     LoginComponent,
     UserDirective,
-    UserRoleDirective,
+    UserRoleDirective,   
     SalesComponent,  AttendanceComponent,  PurchaseComponent,
     FarmerComponent, AddEditFarmerComponent, NurseryComponent,
-    AddEditNurseryComponent, AddSalesComponent, AddPurchaseComponent, AddAttendanceComponent,
-    NavMenuComponent
+    AddEditNurseryComponent, AddSalesComponent, AddPurchaseComponent, AddAttendanceComponent, NavMenuComponent
   ],
   imports: [
     BrowserModule, CalendarModule,
     AppRoutingModule, DialogModule, BrowserAnimationsModule, FormsModule, DataTablesModule, HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
   ],
   exports: [
     UserDirective,

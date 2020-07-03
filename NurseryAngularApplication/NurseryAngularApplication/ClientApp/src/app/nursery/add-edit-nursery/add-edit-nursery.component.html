@@ -1,0 +1,138 @@
+  <p-dialog [(visible)]="displayModal" [modal]="true" [baseZIndex]="10000" [style]="{'width': '50%'}"
+            [draggable]="false" [resizable]="false">
+    <div>
+      <div class="kt-portlet kt-portlet--mobile shadow-none">
+        <div class="kt-portlet__head">
+          <div class="kt-portlet__head-label">
+            <h4 class="kt-portlet__head-title">
+              Add Nursery
+            </h4>
+          </div>
+          <div class="kt-portlet__head-toolbar">
+          </div>
+        </div>
+        <form *ngIf="active" (ngSubmit)="submitForm()" novalidate>
+          <div class="kt-portlet__body m-padding-t-10">
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group m-form__group kt-margin-b-5">
+                  <label>Nursery Name</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" [(ngModel)]="nurseys.NurseryName" class="form-control m-input"
+                           name="nurseryName" placeholder="Nursery Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Contact Number</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" class="form-control m-input" [(ngModel)]="nurseys.ContactNumber"
+                           name="contactNumber" placeholder="Contact Number">
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Village Name</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" class="form-control m-input" [(ngModel)]="nurseys.VillageName"
+                           name="villageName" placeholder="Village Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>State</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <select class="form-control m-input m-input--square" [(ngModel)]="nurseys.StateId"
+                            name="stateId" id="idState">
+                      <option>Select State</option>
+                      <option *ngFor="let item of state; let i = index">{{item.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>District</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <select class="form-control m-input m-input--square" [(ngModel)]="nurseys.DistrictId"
+                            name="districtId" id="idDistrict">
+                      <option>Select District</option>
+                      <option></option>                     
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Tehsil</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <select class="form-control m-input m-input--square" [(ngModel)]="nurseys.TehsilId"
+                            name="tehsilId" id="idTehsil">
+                      <option>Select Tehsil</option>
+                      <option></option>                      
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom kt-margin-t-5 kt-margin-b-10 kt-font-bold kt-padding-b-5">
+              Nursery Owner Detail
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>First Name</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" class="form-control m-input" [(ngModel)]="nurseys.FirstName" 
+                          name="firstName" placeholder="First Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Middle Name</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" class="form-control m-input" [(ngModel)]="nurseys.MiddleName"
+                          name="middleName" placeholder="Middle Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Last Name</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" class="form-control m-input" [(ngModel)]="nurseys.LastName"
+                          name="lastName" placeholder="Last Name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Start of Date</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <p-calendar [style]="{'width': '100%'}" name="creationDate" placeholder="Start of Date"
+                                [(ngModel)]="nurseys.CreationDate"></p-calendar>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group m-form__group m-margin-b-5">
+                  <label>Email ID</label>
+                  <div class="m-input-icon m-input-icon--right">
+                    <input type="text" class="form-control m-input" [(ngModel)]="nurseys.EmailId" name="emailId" placeholder="Email ID">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kt-portlet__foot kt-align-right kt-padding-5">
+            <button type="button" class="btn btn-danger btn-sm" (click)="close()">Close</button>
+            <button type="submit" class="btn btn-skype btn-sm" >Save</button>
+          </div>
+        </form>       
+      </div>      
+    </div>
+  </p-dialog>

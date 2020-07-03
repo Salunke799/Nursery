@@ -1,0 +1,48 @@
+<div class="kt-portlet kt-portlet--mobile">
+  <div class="kt-portlet__head">
+    <div class="kt-portlet__head-label">
+      <h4 class="kt-portlet__head-title">
+        Sales
+      </h4>
+    </div>
+    <div class="kt-portlet__head-toolbar">
+    
+    </div>
+  </div>
+  <div class="kt-portlet__body kt-padding-t-10">
+    <div class="row border-bottom kt-padding-b-10 kt-margin-b-10">
+      <div class="col-3">
+        <div class="form-group m-form__group kt-margin-b-5">
+          <label>Select Nursery</label>
+          <div class="m-input-icon m-input-icon--right">
+            <select class="form-control m-input m-input--square" id="idNarsary" #idNarsary (change)="selectNursery(idNarsary.value)">
+              <option>Select Nursery</option>
+              <option *ngFor="let item of nursery;" value="{{item.id}}">{{item.nurseryName}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+      <thead>
+        <tr>
+          <th>Farmer Name</th>
+          <th>Address</th>
+          <th>Contact No</th>
+          <th>Plantation Date</th>          
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="salesData">
+        <tr *ngFor="let item of salesData;">
+          <td>{{item.name}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.mobileNo}}</td>
+          <td>{{item.plantationDate}}</td>        
+          <td><button class="btn btn-skype btn-sm btn-square action-button" type="submit" (click)="addSales.showModalDialog()">Sales</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<add-sales #addSales></add-sales>
