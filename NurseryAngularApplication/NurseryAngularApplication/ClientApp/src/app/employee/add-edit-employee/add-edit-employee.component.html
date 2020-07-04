@@ -1,0 +1,159 @@
+  <p-dialog [(visible)]="displayModal" [modal]="true" [baseZIndex]="10000" [style]="{'width': '50%'}"
+            [draggable]="false" [resizable]="false">
+    <form *ngIf="active" (ngSubmit)="addEmployee()" novalidate>
+      <div class="kt-portlet kt-portlet--mobile shadow-none">
+        <div class="kt-portlet__head">
+          <div class="kt-portlet__head-label">
+            <h4 class="kt-portlet__head-title">
+              Add Employee
+            </h4>
+          </div>
+          <div class="kt-portlet__head-toolbar">
+          </div>
+        </div>
+        <div class="kt-portlet__body m-padding-t-10">
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group m-form__group kt-margin-b-5">
+                <label>Select Nursery</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <select class="form-control m-input m-input--square" id="idNarsary" #idNarsary (change)="selectNursery(idNarsary.value)">
+                    <option>Select Nursery</option>
+                    <option *ngFor="let item of nursery;" value="{{item.id}}">{{item.nurseryName}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>First Name</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <input type="text" class="form-control m-input" placeholder="First Name"
+                         [(ngModel)]="emp.firstName" name="firstName">
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Middle Name</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <input type="text" class="form-control m-input" placeholder="Middle Name"
+                         [(ngModel)]="emp.middleName" name="middleName">
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Last Name</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <input type="text" class="form-control m-input" placeholder="Last Name"
+                         [(ngModel)]="emp.lastName" name="lastName">
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Date of Birth</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <p-calendar [style]="{'width': '100%'}" name="dateofBirth" placeholder="Start of Date"
+                              [(ngModel)]="emp.dateofBirth"></p-calendar>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Contact  No</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <input type="text" class="form-control m-input" placeholder="Mobile No"
+                         [(ngModel)]="emp.contactNumber" name="contactNumber">
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group kt-margin-b-5">
+                <label>Gender</label>
+                <div class="kt-radio-inline">
+                  <label class="kt-radio">
+                    <input type="radio" name="genderType" value="1" checked [(ngModel)]="emp.genderType"> Male
+                    <span></span>
+                  </label>
+                  <label class="kt-radio">
+                    <input type="radio" name="genderType" value="2" [(ngModel)]="emp.genderType"> Female
+                    <span></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>State</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <select class="form-control m-input m-input--square" id="idState" [(ngModel)]="emp.stateId" name="stateId">
+                    <option>Select State</option>
+                    <option *ngFor="let item of state; let i = index">{{item.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>District</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <select class="form-control m-input m-input--square" id="idDistrict" [(ngModel)]="emp.districtId" name="districtId">
+                    <option>Select District</option>
+                    <option></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Tehsil</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <select class="form-control m-input m-input--square" id="idTehsil" [(ngModel)]="emp.tehsilId" name="tehsilId">
+                    <option>Select Tehsil</option>
+                    <option></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Village Name</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <input type="text" class="form-control m-input" placeholder="Village Name"
+                         [(ngModel)]="emp.villageName" name="villageName">
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Employee Education</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <select class="form-control m-input m-input--square" id="idTehsil" [(ngModel)]="emp.educationType" name="educationType">
+                    <option>Select Education</option>
+                    <option *ngFor="let item of educationDegree; let i = index">{{item.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group m-form__group m-margin-b-5">
+                <label>Email ID</label>
+                <div class="m-input-icon m-input-icon--right">
+                  <input type="text" class="form-control m-input" placeholder="Email ID"
+                         [(ngModel)]="emp.email" name="email">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="kt-portlet__foot kt-align-right kt-padding-5">
+          <button type="button" class="btn btn-danger btn-sm" (click)="close()">Close</button>
+          <button type="submit" class="btn btn-skype btn-sm">Save</button>
+        </div>
+      </div>
+    </form>
+  </p-dialog>

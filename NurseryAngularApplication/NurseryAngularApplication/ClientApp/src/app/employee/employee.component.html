@@ -1,0 +1,58 @@
+<div class="kt-portlet kt-portlet--mobile">
+  <div class="kt-portlet__head">
+    <div class="kt-portlet__head-label">
+      <h4 class="kt-portlet__head-title">
+        Employee
+      </h4>
+    </div>
+    <div class="kt-portlet__head-toolbar">
+      <button type="submit" class="btn btn-sm btn-skype" (click)="popupModalEmployee.showModalDialog()">Add Empoyee</button>
+    </div>
+  </div>
+  <!--<load-bar [visible]="loading"></load-bar>-->
+  <div class="kt-portlet__body kt-padding-t-10" style="min-height:500px !important;">
+    <div class="row border-bottom kt-padding-b-10 kt-margin-b-10">
+      <div class="col-3">
+        <div class="form-group m-form__group kt-margin-b-5">
+          <label>Select Nursery</label>
+          <div class="m-input-icon m-input-icon--right">
+            <select class="form-control m-input m-input--square" id="idNarsary" #idNarsary (change)="selectNursery(idNarsary.value)">
+              <option>Select Nursery</option>
+              <option *ngFor="let item of nursery;" value="{{item.id}}">{{item.nurseryName}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table datatable [dtOptions]="dtOptions" class="row-border hover" *ngIf="empData">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Contact  No</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Emp Edu</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of empData;">
+          <td>{{item.firstName}} {{item.lastName}}</td>
+          <td>{{item.villageName}}</td>
+          <td>{{item.villageName}}</td>
+          <td>{{item.villageName}}</td>
+          <td>{{item.villageName}}</td>
+          <td>{{item.villageName}}</td>
+          <th>
+            <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-info mouse-hover"
+                    (click)="popupModalEmployee.showModalDialog(item.id)">Edit</button>
+            <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-danger kt-padding-l-10 mouse-hover" (click)="deleteEmp(item.id)">Delete</button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<add-edit-employee #popupModalEmployee></add-edit-employee>

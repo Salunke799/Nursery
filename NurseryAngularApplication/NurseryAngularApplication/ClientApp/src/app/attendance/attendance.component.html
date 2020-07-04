@@ -9,36 +9,66 @@
 
     </div>
   </div>
-  <div class="kt-portlet__body kt-paddinf-t-10">
-    <div class="kt-portlet__body kt-paddinf-t-10" style="min-height:500px !important;">
-      <table datatable [dtOptions]="dtOptions" class="row-border hover">
-        <thead>
-          <tr>
-            <th>Emp Name</th>
-            <th>Contact No</th>
-            <th>Gender</th>
-            <th>Total Working Day</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody *ngIf="empData">
-          <tr *ngFor="let item of empData;">
-            <td>{{item.name}}</td>
-            <td>{{item.mobileNo}}</td>
-            <td>{{item.gender}}</td>
-            <td>{{item.empEdu}}</td>
-            <th>
-              <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-info mouse-hover" (click)="attendance.showModalDialog()">
-                Change Attendance
-              </button>
-              <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-skype kt-padding-l-10 mouse-hover"
-                      (click)="attendance.showModalDialog()">
-                Add Attendance
-              </button>
-            </th>
-          </tr>
-        </tbody>
-      </table>
+  <div class="kt-portlet__body kt-padding-t-10" style="min-height:500px !important;">
+    <!--<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Emp Name</th>
+        <th>Contact No</th>
+        <th>Gender</th>
+        <th>Total Working Day</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="empData">
+      <tr *ngFor="let item of empData;">
+        <td>{{item.name}}</td>
+        <td>{{item.mobileNo}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.empEdu}}</td>
+        <th>
+          <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-info mouse-hover" (click)="attendance.showModalDialog()">
+            Change Attendance
+          </button>
+          <button type="button" class="btn kt-padding-0 kt-font-sm kt-font-skype kt-padding-l-10 mouse-hover"
+                  (click)="attendance.showModalDialog()">
+            Add Attendance
+          </button>
+        </th>
+      </tr>
+    </tbody>
+  </table>-->
+    <div class="row">
+      <div class="col-1 border">
+
+      </div>
+      <div class="col-3 border">
+        Emp Name
+      </div>
+      <div class="col-1 border">
+        Monday
+      </div>
+      <div class="col-1 border">Tuesday</div>
+      <div class="col-1 border">Wednesday</div>
+      <div class="col-1 border">Thursday</div>
+      <div class="col-1 border">Friday</div>
+      <div class="col-1 border">Saturday</div>
+      <div class="col-1 border">Sunday</div>
+      <div class="col-1 border">Total</div>
+    </div>
+    <div class="row">
+      <div class="col-1 border">
+
+      </div>
+      <div class="col-3 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border"></div>
+      <div class="col-1 border">Total</div>
     </div>
   </div>
 </div>

@@ -8,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class AttendanceComponent implements OnInit {
   dtOptions: any = {};
   empData = [];
-  constructor() { }
+  today: number = Date.now();
+  
 
-  ngOnInit() {
-    this.dtOptions = {
-      responsive: true
+  date = [
+    {
+      empName: '', week: [
+        {}
+      ]
     }
+  ]
+
+  constructor() {
+
   }
+
+ngOnInit() {
+  this.dtOptions = {
+    responsive: true
+  }
+}
 
 }

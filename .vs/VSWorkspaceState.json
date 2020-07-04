@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\NurseryAngularApplication",
+    "\\NurseryAngularApplication\\NurseryAngularApplication",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\ClientApp",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\ClientApp\\src",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\ClientApp\\src\\app",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\ClientApp\\src\\app\\services",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\Controllers",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\Model",
+    "\\NurseryAngularApplication\\NurseryAngularApplication\\Model\\Nurserys"
+  ],
+  "SelectedNode": "\\NurseryAngularApplication\\NurseryAngularApplication\\ClientApp\\package.json",
+  "PreviewInSolutionExplorer": false
+}

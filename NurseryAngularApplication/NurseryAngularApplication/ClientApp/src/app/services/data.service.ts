@@ -30,10 +30,34 @@ export class DataService {
     debugger
     return this.httpClient.post<NurseryDto>(this.baseurl + '/Nursery/AddNursery', { body: JSON.stringify(nursery) });
   }
-  addNursey(nursery) {
+  addNursey11(nursery) {
     debugger
     return this.httpClient.post<NurseryDto>(this.baseurl + '/Nursery/AddNursery', { body: JSON.stringify(nursery) });
   }
+
+  addNursey(nursery) {
+    debugger
+    var body = {
+      id: nursery.id,
+      nurseryName: nursery.nurseryName,
+      firstName: nursery.firstName,
+      middleName: nursery.middleName,
+      lastName: nursery.lastName,
+      stateId: nursery.stateId,
+      districtId: nursery.districtId,
+      emailId: nursery.emailId,
+      contactNumber: nursery.contactNumber,
+      creationDate: nursery.creationDate,
+      tehsilId: nursery.tehsilId,
+      Email: nursery.emailId
+    }
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    //return this.httpClient.post<any>(this.baseurl + '/Nursery/AddNursery', { body: JSON.stringify(body) }, { headers })
+    return this.httpClient.post<any>(this.baseurl + '/Nursery/AddNursery', JSON.stringify(body), { headers })
+  }
+
+
+
   getNurseyData() {
     return this.httpClient.get(this.baseurl + "/Nursery/GetAllNursery");
   }

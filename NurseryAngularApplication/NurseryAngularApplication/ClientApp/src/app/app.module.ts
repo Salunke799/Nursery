@@ -24,7 +24,8 @@ import { AddPurchaseComponent } from './purchase/add-purchase/add-purchase.compo
 import { AddAttendanceComponent } from './attendance/add-attendance/add-attendance.component';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-
+import { EmployeeComponent } from './employee/employee.component';
+import { AddEditEmployeeComponent } from './employee/add-edit-employee/add-edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,12 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     SalesComponent,  AttendanceComponent,  PurchaseComponent,
     FarmerComponent, AddEditFarmerComponent, NurseryComponent,
     AddEditNurseryComponent, AddSalesComponent, AddPurchaseComponent, AddAttendanceComponent,
-    NavMenuComponent
+    NavMenuComponent, EmployeeComponent, AddEditEmployeeComponent
   ],
   imports: [
     BrowserModule, CalendarModule,
     AppRoutingModule, DialogModule, BrowserAnimationsModule, FormsModule, DataTablesModule, HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
   ],
   exports: [
     UserDirective,

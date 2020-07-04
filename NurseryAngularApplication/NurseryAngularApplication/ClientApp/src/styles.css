@@ -53799,12 +53799,9 @@ body .ui-inputtext {
 table.dataTable tbody th, table.dataTable tbody td {
   padding: 5px 5px !important;
 }
-
 .action-button {
   padding: 0px 10px !important
 }
-
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   padding: 0.1em 0.5em !important;
-  /*border-radius: 50% !important;*/
 }

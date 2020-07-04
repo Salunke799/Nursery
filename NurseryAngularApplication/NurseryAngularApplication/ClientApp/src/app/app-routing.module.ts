@@ -10,6 +10,7 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { FarmerComponent } from './farmer/farmer.component';
 import { NurseryComponent } from './nursery/nursery.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -18,13 +19,12 @@ const routes: Routes = [
     path: '',
     children: [
       { path: '', component: HomeComponent },
-      { path: 'attendance', canActivate: [AuthGuard], component: AttendanceComponent },
-      { path: 'purchase', canActivate: [AuthGuard], component: PurchaseComponent },
+      { path: 'attendance', component: AttendanceComponent },
+      { path: 'purchase', component: PurchaseComponent },
       { path: 'sales', component: SalesComponent },
       { path: 'farmer', component: FarmerComponent },
       { path: 'nursery', component: NurseryComponent },
-
-
+      { path: 'employee', component: EmployeeComponent },
       { path: 'login', component: LoginComponent },
     ]
   },

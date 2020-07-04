@@ -86,6 +86,14 @@ namespace NurseryAngularApplication
 
             app.UseRouting();
 
+            app.UseCors(options =>
+            {
+                options.WithOrigins("http://localhost:22742")
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
