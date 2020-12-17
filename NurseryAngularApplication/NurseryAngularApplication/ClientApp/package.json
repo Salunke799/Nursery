@@ -35,7 +35,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "@swimlane/ngx-charts": "^14.0.0",
     "angular-datatables": "^8.0.0",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.20",
     "datatables.net-responsive": "^2.2.3",
     "datatables.net-responsive-dt": "^2.2.3",
